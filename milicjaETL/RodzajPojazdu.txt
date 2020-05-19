@@ -1,0 +1,10 @@
+rodzaj pojazdu
+miotła
+dywan
+peleryna
+skrzydła
+sanie
+rydwan
+powóz
+statek
+wieloryb

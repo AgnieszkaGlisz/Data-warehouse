@@ -1,0 +1,110 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>milicjaCube</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>xIBU9o3DxGggCQpRDQiSt/qK9+U=14/12/2019 21:01:2014/12/2019 21:01:12</TimeStamp>
+        <ID>
+          <String>Milicja</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>4QYpymTulTruTiV32Q/ZSDe6J70=14/12/2019 21:01:3914/12/2019 21:01:38</TimeStamp>
+        <ID>
+          <String>Milicja</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>tYfzrtUltbPRvEcnHasWbDtBVAM=19/01/2020 21:56:5414/12/2019 21:01:55</TimeStamp>
+        <ID>
+          <String>Kierowca</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>YOSzuRfrrSQZdtR+2f02TxydT5A=20/01/2020 00:00:3314/12/2019 21:01:55</TimeStamp>
+        <ID>
+          <String>Godzina</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>/aUe//KbjTSgGtzX7w1BdmIUtrU=19/01/2020 21:56:5414/12/2019 21:01:55</TimeStamp>
+        <ID>
+          <String>Funkcjonariusz</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>61cnlbfe9OO71A+x2CLtuolXb/U=20/01/2020 00:00:3314/12/2019 21:01:55</TimeStamp>
+        <ID>
+          <String>M Data</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>JgxYlehdbzSjZaxpBuiKRUhvcH8=19/01/2020 21:56:5414/12/2019 21:01:55</TimeStamp>
+        <ID>
+          <String>Rodzaj Pojazdu</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>M/QJMyfuzqaD+OclucGbf8wcmzg=19/01/2020 21:56:5414/12/2019 21:01:55</TimeStamp>
+        <ID>
+          <String>Lokalizacja</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>e2h7NvV1LB652GjacsuA1ax6naA=19/01/2020 22:24:4314/12/2019 21:01:55</TimeStamp>
+        <ID>
+          <String>Patrol</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>nKQpu05tKNhEOWC5nOGoLSArp5U=20/01/2020 00:00:3314/12/2019 21:01:55</TimeStamp>
+        <ID>
+          <String>Czas Trwania</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>JHucqRCpntw2ByXeReHgLE+1GhI=27/01/2020 10:22:3414/12/2019 21:01:55TCWWbPwCTBX9cu+1htlD2pSNMTo=22/01/2020 15:05:1314/12/2019 21:01:55</TimeStamp>
+        <ID>
+          <String>Milicja</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>jo31DrjsOFzWNKPMdP82/lYQNcU=14/12/2019 21:00:3214/12/2019 21:00:32</TimeStamp>
+      <ID>
+        <String>milicjaCube</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2020-01-27T09:22:47.816667Z</LastDeployed>
+</DeploymentSnapshot>

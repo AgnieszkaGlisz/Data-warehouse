@@ -1,0 +1,25 @@
+Godzina,pora dnia
+0,noc2
+1,noc2
+2,noc2
+3,przedświt
+4,przedświt
+5,przedświt
+6,poranek
+7,poranek
+8,poranek
+9,poranek
+10,przedpołudnie
+11,przedpołudnie
+12,południe
+13,wczesne popołudnie
+14,wczesne popołudnie
+15,wczesne popołudnie
+16,późne popołudnie
+17,późne popołudnie
+18,późne popołudnie
+19,wieczór
+20,wieczór
+21,wieczór
+22,noc1
+23,noc1

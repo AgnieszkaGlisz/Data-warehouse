@@ -1,0 +1,25 @@
+czas trwania,określenie czasu trwania
+jedna godzina,bardzo krótki
+dwie godziny,bardzo krótki
+trzy godziny,krótki
+cztery godziny,krótki
+pięć godzin,krótki
+sześć godzin,średni
+siedem godzin,średni
+osiem godzin,średni
+dziewięć godzin,długi
+dziesięć godzin,długi
+jedenaście godzin,długi
+dwanaście godzin,bardzo długi
+trzynaście godzin,bardzo długi
+czternaście godzin,bardzo długi
+piętnaście godzin,dlaczego to jest legalne?
+szesnaście godzin,dlaczego to jest legalne?
+siedemnaście godzin,dlaczego to jest legalne?
+osiemnaście godzin,dlaczego to jest legalne?
+dziewiętnaście godzin,dlaczego to jest legalne?
+dwadzieścia godzin,dlaczego to jest legalne?
+dwadzieścia jeden godzin,dlaczego to jest legalne?
+dwadzieścia dwie godziny,dlaczego to jest legalne?
+dwadzieścia trzy godziny,dlaczego to jest legalne?
+dwadzieścia cztery godziny,dlaczego to jest legalne?

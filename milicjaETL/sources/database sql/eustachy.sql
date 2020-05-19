@@ -1,0 +1,1 @@
+update Funkcjonariusz set "Imie" = 'Eustachy' where "Nr_ID" = 661252;

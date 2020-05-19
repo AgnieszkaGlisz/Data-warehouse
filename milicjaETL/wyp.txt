@@ -1,0 +1,82 @@
+import json
+import csv
+import random
+
+def wylosujLiczbeOfiar():
+    randomEH = random.randint(0,100)
+    if randomEH < 5:
+        liczbaO = 10
+    elif randomEH < 10:
+        liczbaO = 7
+    elif randomEH < 15:
+        liczbaO = 5
+    elif randomEH < 20:
+        liczbaO = 4
+    elif randomEH < 25:
+        liczbaO = 3
+    elif randomEH < 70:
+        liczbaO = 2
+    else:
+        liczbaO =1
+    return liczbaO
+
+pojazdy = list({'miot³a', 'dywan', 'peleryna', 'skrzyd³a', 'sanie', 'rydwan', 'powóz', 'statek', 'wieloryb'})
+
+lokalizacje = list()
+with open(r'ogwell\lok.txt', 'r', encoding="utf8") as infile:
+   for line in infile:
+       lokalizacje.append(line.strip())
+
+kierowcy = list()
+with open(r'ogwell\kierowcy.csv', 'r', encoding="utf8") as infile:
+   for line in infile:
+       tmp = line.split(',')
+       kierowcy.append(tmp)
+
+funk = list()
+with open(r'ogwell\funkc.csv', 'r', encoding="utf8") as infile:
+   for line in infile:
+       tmp = line.split(',')
+       funk.append(tmp)
+
+daty = list()
+with open(r'ogwell\daty.txt', 'r', encoding="utf8") as infile:
+   for line in infile:
+       tmp = line.split(',')
+       daty.append(tmp)
+
+print(daty[0])
+godziny = list()
+with open(r'ogwell\Godziny.txt', 'r', encoding="utf8") as infile:
+   for line in infile:
+       tmp = line.split(',')
+       godziny.append(tmp)
+
+
+inserty = list()
+for d in daty:
+    czyBylWypadek = random.randint(0,100)
+    if czyBylWypadek > 10:
+        czyKoniecWypadkow = True
+        while(czyKoniecWypadkow):
+            randFK = random.randint(1,171)
+            randomK = random.randint(1,1000)
+            randomP = random.randint(0,8)
+            randomH = random.randint(1,24)
+            randomL = random.randint(0,99)
+            liczbaO = wylosujLiczbeOfiar()
+                
+            text = 'INSERT INTO Wypadek(funkcjonariuszREF, dataWypadku, godzinaWypadku, kierowcaREF, lokalizacja, rodzajPojazdu, liczbaOfiar) VALUES(\''
+            text += funk[randFK][5].strip() + '\', \'' + d[1] + '\', \'' +godziny[randomH][0] + '\', \''
+            text += kierowcy[randomK][0].strip() + '\', \'' + lokalizacje[randomL] + '\', \''
+            text += pojazdy[randomP] + '\', ' + str(liczbaO) + ')\n'
+            inserty.append(text)
+            es = random.randint(0,100)
+            if es < 40:
+                czyKoniecWypadkow = False
+
+
+
+with open(r'ogwell\wyp.sql', 'w', encoding="utf8") as outfile:
+   for element in inserty:
+       outfile.write(element)

@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "milicjaCube", "milicjaCube\milicjaCube.dwproj", "{D05C427F-DABC-4C99-95DE-2AAA5B23F49D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D05C427F-DABC-4C99-95DE-2AAA5B23F49D}.Development|Default.ActiveCfg = Development
+		{D05C427F-DABC-4C99-95DE-2AAA5B23F49D}.Development|Default.Build.0 = Development
+		{D05C427F-DABC-4C99-95DE-2AAA5B23F49D}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C93B137F-2507-4436-8380-4D9B1E1FD225}
+	EndGlobalSection
+EndGlobal

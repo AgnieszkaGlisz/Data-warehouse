@@ -1,0 +1,2530 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/1/2019 10:40:55 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-4K2ETHB"
+  DTS:CreatorName="DESKTOP-4K2ETHB\Lenovo"
+  DTS:DTSID="{D3C416D2-6362-4A09-8AA7-F7F2BAEDD071}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Initial data"
+  DTS:PackageType="5"
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{7299BD9E-A298-47C9-AB9C-BDA94DB793CF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Informacje ogólne"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3FC67958-9BA2-4186-9794-3CC78F2CA2AB}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Informacje ogólne"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Informacje ogólne\Czas trwania"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Czas trwania"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje ogólne\Czas trwania.Connections[FlatFileConnection]"
+                  connectionManagerID="{E64F2984-B605-4353-9701-5AE123CC02BE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Czas trwania]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Output].Columns[czas trwania]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Output].ExternalColumns[czas trwania]"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Output].Columns[czas trwania]"
+                      name="czas trwania"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Output].Columns[określenie czasu trwania]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Output].ExternalColumns[określenie czasu trwania]"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Output].Columns[określenie czasu trwania]"
+                      name="określenie czasu trwania"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Output].ExternalColumns[czas trwania]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="czas trwania" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Output].ExternalColumns[określenie czasu trwania]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="określenie czasu trwania" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje ogólne\Daty"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Daty"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje ogólne\Daty.Connections[FlatFileConnection]"
+                  connectionManagerID="{EA412161-92D3-4D5B-B3AF-1E7AD89B44F2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Data]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ rok]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].ExternalColumns[ rok]"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ rok]"
+                      name=" rok"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ dzień miesiąca]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].ExternalColumns[ dzień miesiąca]"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ dzień miesiąca]"
+                      name=" dzień miesiąca"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ pora roku]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].ExternalColumns[ pora roku]"
+                      length="30"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ pora roku]"
+                      name=" pora roku"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ Data]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].ExternalColumns[ Data]"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ Data]"
+                      name=" Data"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ miesiąc]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].ExternalColumns[ miesiąc]"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ miesiąc]"
+                      name=" miesiąc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ dzień tygodnia]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].ExternalColumns[ dzień tygodnia]"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ dzień tygodnia]"
+                      name=" dzień tygodnia"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ święto]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].ExternalColumns[ święto]"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ święto]"
+                      name=" święto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].ExternalColumns[ rok]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name=" rok" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].ExternalColumns[ dzień miesiąca]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name=" dzień miesiąca" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].ExternalColumns[ pora roku]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name=" pora roku" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].ExternalColumns[ Data]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name=" Data" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].ExternalColumns[ miesiąc]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name=" miesiąc" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].ExternalColumns[ dzień tygodnia]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name=" dzień tygodnia" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].ExternalColumns[ święto]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name=" święto" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje ogólne\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Informacje ogólne\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Inputs[Derived Column Input].Columns[ rok]"
+                      cachedDataType="i8"
+                      cachedName=" rok"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ rok]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Inputs[Derived Column Input].Columns[ dzień miesiąca]"
+                      cachedDataType="i8"
+                      cachedName=" dzień miesiąca"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ dzień miesiąca]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Inputs[Derived Column Input].Columns[ pora roku]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName=" pora roku"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ pora roku]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Inputs[Derived Column Input].Columns[ Data]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName=" Data"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ Data]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Inputs[Derived Column Input].Columns[ miesiąc]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName=" miesiąc"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ miesiąc]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Inputs[Derived Column Input].Columns[ dzień tygodnia]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName=" dzień tygodnia"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ dzień tygodnia]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Inputs[Derived Column Input].Columns[ święto]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName=" święto"
+                      lineageId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ święto]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Informacje ogólne\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived Data]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived Data]"
+                      name="Derived Data"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1250)#{Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ Data]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1250)[ Data]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived Rok]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived Rok]"
+                      name="Derived Rok"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1250)#{Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ rok]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1250)[ rok]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived Miesiąc]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived Miesiąc]"
+                      name="Derived Miesiąc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1250)#{Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ miesiąc]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1250)[ miesiąc]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived Dzień Miesiąca]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived Dzień Miesiąca]"
+                      name="Derived Dzień Miesiąca"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1250)#{Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ dzień miesiąca]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1250)[ dzień miesiąca]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived Dzień Tygodnia]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived Dzień Tygodnia]"
+                      name="Derived Dzień Tygodnia"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1250)#{Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ dzień tygodnia]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1250)[ dzień tygodnia]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived święto]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived święto]"
+                      name="Derived święto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1250)#{Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ święto]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1250)[ święto]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived pora roku]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived pora roku]"
+                      name="Derived pora roku"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1250)#{Package\Informacje ogólne\Daty.Outputs[Flat File Source Output].Columns[ pora roku]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1250)[ pora roku]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Informacje ogólne\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje ogólne\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Informacje ogólne\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje ogólne\Derived Column 1.Inputs[Derived Column Input].Columns[nazwa]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="nazwa"
+                      lineageId="Package\Informacje ogólne\Lokalizacja.Outputs[Flat File Source Output].Columns[nazwa]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje ogólne\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Informacje ogólne\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Column 1.Outputs[Derived Column Output].Columns[nazwa2]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Informacje ogólne\Derived Column 1.Outputs[Derived Column Output].Columns[nazwa2]"
+                      name="nazwa2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,100,1250)#{Package\Informacje ogólne\Lokalizacja.Outputs[Flat File Source Output].Columns[nazwa]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,100,1250)nazwa</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Informacje ogólne\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Informacje ogólne\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje ogólne\Derived CzasTrw"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived CzasTrw"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Informacje ogólne\Derived CzasTrw.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje ogólne\Derived CzasTrw.Inputs[Derived Column Input].Columns[czas trwania]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="czas trwania"
+                      lineageId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Output].Columns[czas trwania]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\Derived CzasTrw.Inputs[Derived Column Input].Columns[określenie czasu trwania]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="określenie czasu trwania"
+                      lineageId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Output].Columns[określenie czasu trwania]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje ogólne\Derived CzasTrw.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Informacje ogólne\Derived CzasTrw.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived CzasTrw.Outputs[Derived Column Output].Columns[czasTrw]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Derived CzasTrw.Outputs[Derived Column Output].Columns[czasTrw]"
+                      name="czasTrw"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1250)#{Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Output].Columns[czas trwania]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1250)[czas trwania]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived CzasTrw.Outputs[Derived Column Output].Columns[okrCzasuTrw]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Derived CzasTrw.Outputs[Derived Column Output].Columns[okrCzasuTrw]"
+                      name="okrCzasuTrw"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1250)#{Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Output].Columns[określenie czasu trwania]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1250)[określenie czasu trwania]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Informacje ogólne\Derived CzasTrw.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Informacje ogólne\Derived CzasTrw.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived CzasTrw.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Derived CzasTrw.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived CzasTrw.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Derived CzasTrw.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje ogólne\Derived Godziny"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Godziny"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Informacje ogólne\Derived Godziny.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje ogólne\Derived Godziny.Inputs[Derived Column Input].Columns[Godzina]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Godzina"
+                      lineageId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Output].Columns[Godzina]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\Derived Godziny.Inputs[Derived Column Input].Columns[pora dnia]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="pora dnia"
+                      lineageId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Output].Columns[pora dnia]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje ogólne\Derived Godziny.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Informacje ogólne\Derived Godziny.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Godziny.Outputs[Derived Column Output].Columns[godzina 2]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Derived Godziny.Outputs[Derived Column Output].Columns[godzina 2]"
+                      name="godzina 2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1250)#{Package\Informacje ogólne\Godziny.Outputs[Flat File Source Output].Columns[Godzina]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1250)Godzina</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Godziny.Outputs[Derived Column Output].Columns[pora dnia 2]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Derived Godziny.Outputs[Derived Column Output].Columns[pora dnia 2]"
+                      name="pora dnia 2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1250)#{Package\Informacje ogólne\Godziny.Outputs[Flat File Source Output].Columns[pora dnia]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1250)[pora dnia]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Informacje ogólne\Derived Godziny.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Informacje ogólne\Derived Godziny.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Godziny.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Derived Godziny.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived Godziny.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Derived Godziny.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje ogólne\Derived RodzajPojazdu"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived RodzajPojazdu"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Informacje ogólne\Derived RodzajPojazdu.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje ogólne\Derived RodzajPojazdu.Inputs[Derived Column Input].Columns[rodzaj pojazdu]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="rodzaj pojazdu"
+                      lineageId="Package\Informacje ogólne\Rodzaj pojazdu.Outputs[Flat File Source Output].Columns[rodzaj pojazdu]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje ogólne\Derived RodzajPojazdu.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Informacje ogólne\Derived RodzajPojazdu.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived RodzajPojazdu.Outputs[Derived Column Output].Columns[rodzaj pojazdu 2]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Derived RodzajPojazdu.Outputs[Derived Column Output].Columns[rodzaj pojazdu 2]"
+                      name="rodzaj pojazdu 2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1250)#{Package\Informacje ogólne\Rodzaj pojazdu.Outputs[Flat File Source Output].Columns[rodzaj pojazdu]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1250)[rodzaj pojazdu]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Informacje ogólne\Derived RodzajPojazdu.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Informacje ogólne\Derived RodzajPojazdu.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived RodzajPojazdu.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Derived RodzajPojazdu.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Derived RodzajPojazdu.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Derived RodzajPojazdu.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje ogólne\Godziny"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Godziny"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje ogólne\Godziny.Connections[FlatFileConnection]"
+                  connectionManagerID="{1C2BDF59-CD58-4D41-B9CF-8894D6B42D62}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Godzina]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Output].Columns[pora dnia]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Output].ExternalColumns[pora dnia]"
+                      length="30"
+                      lineageId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Output].Columns[pora dnia]"
+                      name="pora dnia"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Output].Columns[Godzina]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Output].ExternalColumns[Godzina]"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Output].Columns[Godzina]"
+                      name="Godzina"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Output].ExternalColumns[pora dnia]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="pora dnia" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Output].ExternalColumns[Godzina]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Godzina" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje ogólne\Lokalizacja"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Lokalizacja"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje ogólne\Lokalizacja.Connections[FlatFileConnection]"
+                  connectionManagerID="{149E1B60-BE8F-45E2-8DA6-58B926486207}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Lokalizacja]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Informacje ogólne\Lokalizacja.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Lokalizacja.Outputs[Flat File Source Output].Columns[nazwa]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje ogólne\Lokalizacja.Outputs[Flat File Source Output].ExternalColumns[nazwa]"
+                      length="100"
+                      lineageId="Package\Informacje ogólne\Lokalizacja.Outputs[Flat File Source Output].Columns[nazwa]"
+                      name="nazwa"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\Lokalizacja.Outputs[Flat File Source Output].ExternalColumns[nazwa]"
+                      codePage="65001"
+                      dataType="str"
+                      length="100"
+                      name="nazwa" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Informacje ogólne\Lokalizacja.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Lokalizacja.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Informacje ogólne\Lokalizacja.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Lokalizacja.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Lokalizacja.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Lokalizacja.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Lokalizacja.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Dest RodzajPojazdu"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[RodzajPojazdu]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu.Connections[OleDbConnection]"
+                  connectionManagerID="{9EECEE94-E27E-4CFB-A660-EB8B0E4E2E9D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-M91HNVF.milicja]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu.Inputs[OLE DB Destination Input].Columns[rodzaj pojazdu 2]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="rodzaj pojazdu 2"
+                      externalMetadataColumnId="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu.Inputs[OLE DB Destination Input].ExternalColumns[rodzajPojazdu]"
+                      lineageId="Package\Informacje ogólne\Derived RodzajPojazdu.Outputs[Derived Column Output].Columns[rodzaj pojazdu 2]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu.Inputs[OLE DB Destination Input].ExternalColumns[rodzajPojazdu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="rodzajPojazdu" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje ogólne\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Lokalizacja]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje ogólne\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{9EECEE94-E27E-4CFB-A660-EB8B0E4E2E9D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-M91HNVF.milicja]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Informacje ogólne\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nazwa2]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="nazwa2"
+                      externalMetadataColumnId="Package\Informacje ogólne\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nazwa]"
+                      lineageId="Package\Informacje ogólne\Derived Column 1.Outputs[Derived Column Output].Columns[nazwa2]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      name="nazwa" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje ogólne\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Informacje ogólne\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje ogólne\OLE DB Destination CzasTrw"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination CzasTrw"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CzasTrwania]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Connections[OleDbConnection]"
+                  connectionManagerID="{9EECEE94-E27E-4CFB-A660-EB8B0E4E2E9D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-M91HNVF.milicja]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Inputs[OLE DB Destination Input].Columns[czasTrw]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="czasTrw"
+                      externalMetadataColumnId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Inputs[OLE DB Destination Input].ExternalColumns[czasTrwania]"
+                      lineageId="Package\Informacje ogólne\Derived CzasTrw.Outputs[Derived Column Output].Columns[czasTrw]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Inputs[OLE DB Destination Input].Columns[okrCzasuTrw]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="okrCzasuTrw"
+                      externalMetadataColumnId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Inputs[OLE DB Destination Input].ExternalColumns[okreslenieCzasuTrwania]"
+                      lineageId="Package\Informacje ogólne\Derived CzasTrw.Outputs[Derived Column Output].Columns[okrCzasuTrw]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Inputs[OLE DB Destination Input].ExternalColumns[czasTrwania]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="czasTrwania" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Inputs[OLE DB Destination Input].ExternalColumns[okreslenieCzasuTrwania]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="okreslenieCzasuTrwania" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje ogólne\OLE DB Destination Daty"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination Daty"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[MData]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje ogólne\OLE DB Destination Daty.Connections[OleDbConnection]"
+                  connectionManagerID="{9EECEE94-E27E-4CFB-A660-EB8B0E4E2E9D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-M91HNVF.milicja]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].Columns[Derived Data]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Derived Data"
+                      externalMetadataColumnId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].ExternalColumns[mData]"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived Data]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].Columns[Derived Rok]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Derived Rok"
+                      externalMetadataColumnId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].ExternalColumns[rok]"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived Rok]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].Columns[Derived Miesiąc]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Derived Miesiąc"
+                      externalMetadataColumnId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].ExternalColumns[miesiac]"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived Miesiąc]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].Columns[Derived Dzień Miesiąca]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Derived Dzień Miesiąca"
+                      externalMetadataColumnId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].ExternalColumns[dzienMiesiaca]"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived Dzień Miesiąca]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].Columns[Derived Dzień Tygodnia]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Derived Dzień Tygodnia"
+                      externalMetadataColumnId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].ExternalColumns[dzienTygodnia]"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived Dzień Tygodnia]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].Columns[Derived pora roku]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Derived pora roku"
+                      externalMetadataColumnId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].ExternalColumns[poraRoku]"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived pora roku]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].Columns[Derived święto]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Derived święto"
+                      externalMetadataColumnId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].ExternalColumns[swieto]"
+                      lineageId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output].Columns[Derived święto]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].ExternalColumns[mData]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="mData" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].ExternalColumns[rok]"
+                      dataType="i4"
+                      name="rok" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].ExternalColumns[miesiac]"
+                      codePage="1250"
+                      dataType="str"
+                      length="30"
+                      name="miesiac" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].ExternalColumns[dzienMiesiaca]"
+                      dataType="i4"
+                      name="dzienMiesiaca" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].ExternalColumns[dzienTygodnia]"
+                      codePage="1250"
+                      dataType="str"
+                      length="30"
+                      name="dzienTygodnia" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].ExternalColumns[poraRoku]"
+                      codePage="1250"
+                      dataType="str"
+                      length="30"
+                      name="poraRoku" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input].ExternalColumns[swieto]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="swieto" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje ogólne\OLE DB Destination Daty.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\OLE DB Destination Daty.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Daty.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\OLE DB Destination Daty.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje ogólne\OLE DB Destination Godziny"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination Godziny"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Godzina]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje ogólne\OLE DB Destination Godziny.Connections[OleDbConnection]"
+                  connectionManagerID="{9EECEE94-E27E-4CFB-A660-EB8B0E4E2E9D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-M91HNVF.milicja]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Informacje ogólne\OLE DB Destination Godziny.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Godziny.Inputs[OLE DB Destination Input].Columns[godzina 2]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="godzina 2"
+                      externalMetadataColumnId="Package\Informacje ogólne\OLE DB Destination Godziny.Inputs[OLE DB Destination Input].ExternalColumns[godzina]"
+                      lineageId="Package\Informacje ogólne\Derived Godziny.Outputs[Derived Column Output].Columns[godzina 2]" />
+                    <inputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Godziny.Inputs[OLE DB Destination Input].Columns[pora dnia 2]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pora dnia 2"
+                      externalMetadataColumnId="Package\Informacje ogólne\OLE DB Destination Godziny.Inputs[OLE DB Destination Input].ExternalColumns[poraDnia]"
+                      lineageId="Package\Informacje ogólne\Derived Godziny.Outputs[Derived Column Output].Columns[pora dnia 2]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Godziny.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Godziny.Inputs[OLE DB Destination Input].ExternalColumns[godzina]"
+                      dataType="i4"
+                      name="godzina" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Godziny.Inputs[OLE DB Destination Input].ExternalColumns[poraDnia]"
+                      codePage="1250"
+                      dataType="str"
+                      length="30"
+                      name="poraDnia" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje ogólne\OLE DB Destination Godziny.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Informacje ogólne\OLE DB Destination Godziny.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Godziny.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\OLE DB Destination Godziny.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\OLE DB Destination Godziny.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\OLE DB Destination Godziny.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje ogólne\Rodzaj pojazdu"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Rodzaj pojazdu"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje ogólne\Rodzaj pojazdu.Connections[FlatFileConnection]"
+                  connectionManagerID="{0914FEAC-E043-49E1-B185-F979D792D3CF}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Rodzaj pojazdu]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Informacje ogólne\Rodzaj pojazdu.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Rodzaj pojazdu.Outputs[Flat File Source Output].Columns[rodzaj pojazdu]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje ogólne\Rodzaj pojazdu.Outputs[Flat File Source Output].ExternalColumns[rodzaj pojazdu]"
+                      length="50"
+                      lineageId="Package\Informacje ogólne\Rodzaj pojazdu.Outputs[Flat File Source Output].Columns[rodzaj pojazdu]"
+                      name="rodzaj pojazdu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje ogólne\Rodzaj pojazdu.Outputs[Flat File Source Output].ExternalColumns[rodzaj pojazdu]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="rodzaj pojazdu" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Informacje ogólne\Rodzaj pojazdu.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Rodzaj pojazdu.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Informacje ogólne\Rodzaj pojazdu.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Rodzaj pojazdu.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Rodzaj pojazdu.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje ogólne\Rodzaj pojazdu.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje ogólne\Rodzaj pojazdu.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Informacje ogólne.Paths[Derived Column Output]"
+              endId="Package\Informacje ogólne\OLE DB Destination Godziny.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Informacje ogólne\Derived Godziny.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Informacje ogólne.Paths[Derived Column Output1]"
+              endId="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Informacje ogólne\Derived RodzajPojazdu.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Informacje ogólne.Paths[Derived Column Output2]"
+              endId="Package\Informacje ogólne\OLE DB Destination CzasTrw.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Informacje ogólne\Derived CzasTrw.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Informacje ogólne.Paths[Derived Column Output3]"
+              endId="Package\Informacje ogólne\OLE DB Destination Daty.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Informacje ogólne\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Informacje ogólne.Paths[Derived Column Output4]"
+              endId="Package\Informacje ogólne\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Informacje ogólne\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Informacje ogólne.Paths[Flat File Source Output]"
+              endId="Package\Informacje ogólne\Derived Godziny.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Informacje ogólne\Godziny.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Informacje ogólne.Paths[Flat File Source Output1]"
+              endId="Package\Informacje ogólne\Derived RodzajPojazdu.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Informacje ogólne\Rodzaj pojazdu.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Informacje ogólne.Paths[Flat File Source Output2]"
+              endId="Package\Informacje ogólne\Derived CzasTrw.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Informacje ogólne\Czas trwania.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Informacje ogólne.Paths[Flat File Source Output3]"
+              endId="Package\Informacje ogólne\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Informacje ogólne\Daty.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Informacje ogólne.Paths[Flat File Source Output4]"
+              endId="Package\Informacje ogólne\Derived Column 1.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Informacje ogólne\Lokalizacja.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="165,41.5"
+          Id="Package\Informacje ogólne"
+          TopLeft="43.1785704651657,73.5000007292804" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Informacje ogólne">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="213,41.5"
+          Id="Package\Informacje ogólne\OLE DB Destination CzasTrw"
+          TopLeft="16.8857139159222,26.7882352855379" />
+        <NodeLayout
+          Size="155,41.5"
+          Id="Package\Informacje ogólne\Derived Godziny"
+          TopLeft="282.057142973919,91.1529411421515" />
+        <NodeLayout
+          Size="210.5,41.5"
+          Id="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu"
+          TopLeft="26.2857141202809,196.188235285538" />
+        <NodeLayout
+          Size="153,41.5"
+          Id="Package\Informacje ogólne\Derived Column"
+          TopLeft="288.000004904611,145.411766464735" />
+        <NodeLayout
+          Size="100,41.5"
+          Id="Package\Informacje ogólne\Daty"
+          TopLeft="541.6,144" />
+        <NodeLayout
+          Size="150.5,41.5"
+          Id="Package\Informacje ogólne\Rodzaj pojazdu"
+          TopLeft="540,196.8" />
+        <NodeLayout
+          Size="157,41.5"
+          Id="Package\Informacje ogólne\Derived CzasTrw"
+          TopLeft="277.714290443732,33.9294118590833" />
+        <NodeLayout
+          Size="116,41.5"
+          Id="Package\Informacje ogólne\Godziny"
+          TopLeft="540.357142857143,88.9571428571428" />
+        <NodeLayout
+          Size="186.5,41.5"
+          Id="Package\Informacje ogólne\Derived RodzajPojazdu"
+          TopLeft="275.2,196.8" />
+        <NodeLayout
+          Size="211,41.5"
+          Id="Package\Informacje ogólne\OLE DB Destination Godziny"
+          TopLeft="20.9142854028819,90.4" />
+        <NodeLayout
+          Size="195,41.5"
+          Id="Package\Informacje ogólne\OLE DB Destination Daty"
+          TopLeft="22.8571432463977,143.576472321349" />
+        <NodeLayout
+          Size="139,41.5"
+          Id="Package\Informacje ogólne\Czas trwania"
+          TopLeft="540.321428571429,33.3571428571429" />
+        <EdgeLayout
+          Id="Package\Informacje ogólne.Paths[Flat File Source Output3]"
+          TopLeft="541.6,165.505883232368">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-100.799995095389,0"
+              Start="0,0"
+              End="-93.2999950953891,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-93.2999950953891,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje ogólne.Paths[Flat File Source Output2]"
+          TopLeft="540.321428571429,54.4432773581131">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-105.807138127697,0"
+              Start="0,0"
+              End="-98.307138127697,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-98.307138127697,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje ogólne.Paths[Flat File Source Output1]"
+          TopLeft="540,217.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-78.4,0"
+              Start="0,0"
+              End="-70.9,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-70.9,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje ogólne.Paths[Flat File Source Output]"
+          TopLeft="540.357142857143,110.855041999647">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-103.099999883224,0"
+              Start="0,0"
+              End="-95.5999998832238,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-95.5999998832238,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje ogólne.Paths[Derived Column Output3]"
+          TopLeft="288.000004904611,165.294119393042">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-69.9428616582132,0"
+              Start="0,0"
+              End="-62.4428616582132,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-62.4428616582132,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje ogólne.Paths[Derived Column Output2]"
+          TopLeft="277.714290443732,51.1588235723106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-48.0285765278098,0"
+              Start="0,0"
+              End="-40.5285765278098,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-40.5285765278098,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje ogólne.Paths[Derived Column Output1]"
+          TopLeft="275.2,217.294117642769">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-38.5142858797191,0"
+              Start="0,0"
+              End="-31.0142858797191,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-31.0142858797191,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje ogólne.Paths[Derived Column Output]"
+          TopLeft="282.057142973919,111.576470571076">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-49.9428575710374,0"
+              Start="0,0"
+              End="-42.4428575710374,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-42.4428575710374,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Informacje ogólne\Lokalizacja"
+          TopLeft="544.375,267.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Informacje ogólne\Derived Column 1"
+          TopLeft="286.25,260.625" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Informacje ogólne\OLE DB Destination"
+          TopLeft="54.375,258.125" />
+        <EdgeLayout
+          Id="Package\Informacje ogólne.Paths[Flat File Source Output4]"
+          TopLeft="544.375,285.0625">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-95.125,0"
+              Start="0,0"
+              End="-87.625,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-87.625,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje ogólne.Paths[Derived Column Output4]"
+          TopLeft="286.25,280.375">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-60.875,0"
+              Start="0,0"
+              End="-53.375,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-53.375,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje ogólne\OLE DB Destination Godziny">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje ogólne\OLE DB Dest RodzajPojazdu">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje ogólne\OLE DB Destination Daty">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje ogólne\OLE DB Destination CzasTrw">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje ogólne\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

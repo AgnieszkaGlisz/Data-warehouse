@@ -1,0 +1,276 @@
+//Spadek iloœci wypadków o 10.3% w przeci¹gu roku i utrzymanie siê w tendencji spadkowej o co najmniej 0,5% rocznie;
+//Wzrost przychodu z kar o 3% ka¿dego roku. 
+//1. 
+//		Name : Dochód
+//		Value expression: [Measures].[Dochód]
+
+//		Goal expression:
+//			( KPIValue( "Dochód"), 
+//				ParallelPeriod(
+//					[Data Zatrzymania].[Rok], 
+//					1,
+//					[Data Zatrzymania].[Hierarchy].CurrentMember) ) * 1.003
+//		Status expression: 
+//			IIf(KPIVALUE("Dochód") > KPIGoal("Dochód"), 1, -1)
+//		Trend expression:
+//			IIf(KPIVALUE("Dochód") > KPIGoal("Dochód"), ParallelPeriod(
+//				[Data Zatrzymania].[Rok], 
+//				1,
+//				[Data Zatrzymania].[Hierarchy].CurrentMember) 1, -1) ?
+//
+//
+//2.
+//		Name: Liczba wypadków
+//		Value expression: [Measures].[liczba wypadków]
+//
+//		Goal expression:
+//		( KPIValue( "Liczba wypadków"), 
+//				ParallelPeriod(
+//					[Data Zatrzymania].[Rok], 
+//					1,
+//					[Data Zatrzymania].[Hierarchy].CurrentMember) ) * 1.103
+//		Status expression: 
+//			IIf(KPIVALUE("Liczba wypadków") > KPIGoal("Liczba wypadków"), 1, -1)
+//		Trend expression:
+//			IIf(KPIVALUE("Liczba wypadków") > KPIGoal("Liczba wypadków"), ParallelPeriod(
+//				[Data Zatrzymania].[Rok], 
+//				1,
+//				[Data Zatrzymania].[Hierarchy].CurrentMember) 1, -1) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//select 
+//	{ [Measures].[liczba kartek]} on columns,
+//	{		([Data Zatrzymania].[Miesiac].[ Luty], [Lokalizacja].[Nazwa].Children),
+//			(ParallelPeriod(
+//				[Data Zatrzymania].[Miesiac],1,[Data Zatrzymania].[Hierarchy].CurrentMember),
+//			[Lokalizacja].[Nazwa].Children)
+//	 } on rows
+//	from Milicja
+//	where ([Data Zatrzymania].[Rok].[3571])
+
+
+
+//1. Porównaj liczbê wystawionych karnych kartek w ró¿nych lokalizacjach w analizowanym
+//   miesi¹cu z poprzednim miesi¹cem.
+	select 
+	{ [Measures].[liczba kartek]} on columns,
+	{ nonempty(([Data Zatrzymania].[Miesiac].[ Styczeñ],
+	  [Lokalizacja].[Nazwa].Children)),
+	  nonempty(([Data Zatrzymania].[Miesiac].[ Luty],
+	  [Lokalizacja].[Nazwa].Children))
+	 } on rows
+	from Milicja
+	where ([Data Zatrzymania].[Rok].[3571]);
+
+//2. Jaka jest najbardziej dochodowa lokalizacja w tym i poprzednim miesi¹cu?
+	select 
+	//{([Data Zatrzymania].[Miesiac].[ Styczeñ], [Measures].[dochód]),
+	// ([Data Zatrzymania].[Miesiac].[ Luty], [Measures].[dochód])} on columns,
+	//{ topsum([Lokalizacja].[Nazwa].Children,100000,[Measures].[dochód])} on rows
+	{[Measures].[dochód]} on columns,
+	{ topsum(nonempty(([Data Zatrzymania].[Miesiac].[ Styczeñ], [Lokalizacja].[Nazwa].Children)),
+		2097, 
+		[Measures].[dochód]), 
+	  topsum(nonempty(([Data Zatrzymania].[Miesiac].[ Luty], [Lokalizacja].[Nazwa].Children)),
+		2097, 
+		[Measures].[dochód])
+		} on rows
+	from Milicja
+	where([Data Zatrzymania].[Rok].[3570])
+
+//3. Porównaj liczbê patroli w ró¿nych lokalizacjach w analizowanym miesi¹cu z poprzednimi 
+//miesi¹cami. 
+//([Measures].[liczba patroli], [Data Zatrzymania].[Miesiac].CurrentMember)
+with member [Measures].[W porównaniu do Stycznia] as
+'([Measures].[liczba patroli], [Data Zatrzymania].[Miesiac].[ Styczeñ])'
+select 
+{ [Measures].[liczba patroli], [Measures].[W porównaniu do Stycznia] } on columns,
+{ ([Data Zatrzymania].[Miesiac].Children,[Lokalizacja].[Nazwa].Children)} on rows
+from Milicja
+where ([Data Zatrzymania].[Rok].[3571])
+
+//4. Jaki jest dochód z karnych kartek w zale¿noœci od rodzaju zatrzymanego pojazdu w tym i 
+//w poprzednim miesi¹cu?
+select 
+{ [Measures].[dochód] } on columns,
+{ ([Data Zatrzymania].[Miesiac].[ Luty],[Rodzaj Pojazdu].[Rodzaj Pojazdu].Children),
+  ([Data Zatrzymania].[Miesiac].[ Marzec],[Rodzaj Pojazdu].[Rodzaj Pojazdu].Children)} on rows
+from Milicja
+where( [Data Zatrzymania].[Rok].[3571])
+
+//5.Porównaj liczbê skontrolowanych przedstawicieli ró¿nych gatunków w analizowanym miesi¹cu z 
+//poprzednimi miesi¹cami.
+select
+{[Measures].[liczba zatrzymañ]} on columns,
+{nonempty(([Data Zatrzymania].[Miesiac].[ Kwiecieñ], [Kierowca].[Gatunek].Children)),
+ nonempty(([Data Zatrzymania].[Miesiac].[ Marzec], [Kierowca].[Gatunek].Children))
+ } on rows
+ from Milicja
+ where ([Data Zatrzymania].[Rok].[3571])
+
+ //6.Jaki jest przychód w zale¿noœci od czasu trwania patrolu w ró¿nych 
+ //lokalizacjach?
+ select 
+ {([Czas Trwania].[Czas Trwania].Children,[Measures].[dochód])} on columns,
+ {[Lokalizacja].[Nazwa].Children} on rows
+ from Milicja
+ where ([Data Zatrzymania].[Rok].[3570])
+
+ //7. Ilu funkcjonariuszy przypada na dan¹ lokalizacjê o ró¿nych godzinach?
+ //with member [Measure].[yes] as
+ //'filter([Godzina].[Godzina].CurrentMember, )'
+ //select {[Godzina].[Godzina].Children} on columns,
+ //{	([Patrol - Godzina Rozpoczecia].[Godzina].Children,
+//	 [Patrol - Godzina Zakonczenia].[Godzina].Children)} on rows
+//	from Milicja
+
+
+//8. Jaki jest przychód w zale¿noœci od godziny dnia w ró¿nych lokalizacjach?
+
+
+//9. Jaki œredni przychód przypada na (pojedynczego) funkcjonariusza w ró¿nych lokalizacjach?
+select
+{[Measures].[œredni dochód na funkcjonariusza]} on columns,
+{nonempty([Lokalizacja].[Nazwa].Children)
+} on rows
+from Milicja
+
+//10. Jaki przychód przypada na konkretnego funkcjonariusza w zale¿noœci od godziny?
+select
+{[Measures].[dochód]} on columns,
+{nonempty(
+	crossjoin(
+		[Funkcjonariusz].[Imie Nazwisko].Children, 
+		[Lokalizacja].[Nazwa].Children))
+
+} on rows
+from Milicja
+
+
+
+
+
+
+
+<ClearCache  xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+	<Object>
+		<DatabaseID>milicjaCube</DatabaseID>
+	</Object>
+</ClearCache>
+
+
+select
+{[Measures].[dochód]} on columns,
+{[Data Zatrzymania].[Miesiac].Children} on rows
+from Milicja
+go
+
+<ClearCache  xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+	<Object>
+		<DatabaseID>milicjaCube</DatabaseID>
+	</Object>
+</ClearCache>
+
+select
+{[Measures].[dochód]} on columns,
+{[Rodzaj Pojazdu].[Rodzaj Pojazdu].Children} on rows
+from Milicja
+go
+
+<ClearCache  xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+	<Object>
+		<DatabaseID>milicjaCube</DatabaseID>
+	</Object>
+</ClearCache>
+
+select
+{[Measures].[³¹czna liczba ofiar]} on columns,
+{([Godzina].[Pora Dnia], [m Data].[Miesiac].Children)} on rows
+from Milicja
+go
+
+<ClearCache  xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+	<Object>
+		<DatabaseID>milicjaCube</DatabaseID>
+	</Object>
+</ClearCache>
+
+
+
+//Próbne selekty dla zabawy c:
+//select 
+//{ [Measures].[liczba kartek] } ON COLUMNS,
+//{ [Lokalizacja].[Nazwa].Members} ON ROWS
+//from Milicja
+
+//select 
+//{ [Measures].[dochód] } ON COLUMNS,
+//{ [Data Zatrzymania].[Miesiac].Members} ON ROWS
+//from Milicja
+
+//select 
+//{ [Measures].[dochód] } ON COLUMNS,
+//{ Descendants(
+//	[Data Zatrzymania].[3570], 
+//	[Data Zatrzymania].[Hierarchy].[Pora Roku])
+//	} ON ROWS
+//from Milicja
+
+//select
+//{[Measures].[dochód] } ON COLUMNS,
+//{
+//	(
+//		[Data Zatrzymania].[Pora Roku].[ Zima],
+//		[Funkcjonariusz].[Posterunkowy],
+//		[Funkcjonariusz].[Kobieta]
+//	), 
+//	(
+//	[Data Zatrzymania].[Pora Roku].[ Zima],
+//		[Funkcjonariusz].[Posterunkowy],
+//		[Funkcjonariusz].[Mê¿czyzna]
+//	)
+//} on rows
+// from Milicja
+// where ([Data Zatrzymania].[Miesiac].[ Luty])
+
+
+
+//select
+//{ [Measures].[³¹czna liczba ofiar], [Measures].[œrednia liczba ofiar]} on columns,
+//{ CrossJoin([Funkcjonariusz].[Stanowisko].Members, [Lokalizacja].[Nazwa].Members)
+//} on rows
+//from Milicja
+
+//select
+//{ [Measures].[³¹czna liczba ofiar], [Measures].[œrednia liczba ofiar]} on columns,
+//{ NonEmptyCrossJoin([Funkcjonariusz].[Stanowisko].Members, [Lokalizacja].[Nazwa].Members)
+//} on rows
+//from Milicja
+
+
+//with member [Data Zatrzymania].[Rok].[Year difference] AS '[Data Zatrzymania].[Rok].[3570] - [Data Zatrzymania].[Rok].[3571]'
+//select 
+//{	[Data Zatrzymania].[Rok].[3570], 
+//	[Data Zatrzymania].[Rok].[3571], 
+//	[Data Zatrzymania].[Rok].[Year difference] } on columns,
+//{	}
